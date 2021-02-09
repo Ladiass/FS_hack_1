@@ -6,7 +6,15 @@
             </div>
             <a href="/" class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 flex justify-center items-center px-4 py-4 font-bold text-white text-xl"><img src="" alt="">SDC</a>
             <div class="flex flex-wrap space-x-4 items-center">
-                <p class=" cursor-pointer"><span><a href="/views/forms/login.php">Login /</a></span><span><a href="/views/forms/register.php"> Register /</a></span><span><a href="/controllers/auth/logout.php">Logout</a></span></p>
+                
+                <?php if(!isset($_SESSION["user_details"])){ ?>
+                    <p class="cursor-pointer">
+                        <span><a href="/views/forms/login.php">Login</a></span> /
+                        <span><a href="/views/forms/register.php"> Register</a></span>
+                    </p>
+                <?php }else{ ?>
+                <a href="/controllers/auth/logout.php">Logout</a>
+                <?php } ?>
                 <a class="px-4 bg-red-500 py-2 rounded-lg hover:bg-red-600 text-white font-bold shadow ">Contact Us</a>
             </div>
         </div>

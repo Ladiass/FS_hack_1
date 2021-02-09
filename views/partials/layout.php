@@ -13,7 +13,6 @@
     
     <?php include __DIR__."/nav.php"; ?>
     
-
     <main>
         <?php get_content() ?>
     </main>
